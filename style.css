@@ -1,174 +1,175 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    font-family: Arial, Tahoma, sans-serif;
+body {
+  font-family: Arial, Tahoma, sans-serif;
 }
 img {
-    width: 160px;
-    height: 160px;
-
+  width: 160px;
+  height: 160px;
 }
 
-.start-game{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #2196f3c9;
-    z-index: 2;
+.start-game {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2196f3c9;
+  z-index: 2;
 }
-.start-game span{
-    position: absolute;
-    left: 50%;
-    top : 50%;
-    transform: translate(-50% , -50%);
-    background-color: #f44336;
-    padding: 10px 25px;
-    border-radius:6px;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
+.start-game span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f44336;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
 }
-.info{
-    width: 1010px;
-    margin: 20px auto 0px;
-    background-color: #f6f6f6;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    border: 2px solid #2196f3;
-    user-select: none;
+.info {
+  width: 1010px;
+  margin: 20px auto 0px;
+  background-color: #f6f6f6;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  border: 2px solid #2196f3;
+  user-select: none;
 }
-.info .name span , .info .time span ,.info .score .got {
-    font-weight: bold;
-    color: #009688;
+.info .name span,
+.info .time span,
+.info .score .got {
+  font-weight: bold;
+  color: #009688;
 }
-.info .tries span{
-    font-weight: bold;
-    color: red;
+.info .tries span {
+  font-weight: bold;
+  color: red;
 }
-.memory-game-contanir{
-    display: flex;
-    width: 1020px;
-    flex-wrap: wrap;
-    margin: 10px auto ;
+.memory-game-contanir {
+  display: flex;
+  width: 1020px;
+  flex-wrap: wrap;
+  margin: 10px auto;
 }
-.memory-game-contanir.stop{
-    pointer-events: none;
+.memory-game-contanir.stop {
+  pointer-events: none;
 }
-.memory-game-contanir .game-block{
-    height: 170px;
-    transition:  transform .5s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    position: relative;
-    flex: 1 0 170px;
-    margin: 0 5px 10px;
-    user-select: none;
+.memory-game-contanir .game-block {
+  height: 170px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 170px;
+  margin: 0 5px 10px;
+  user-select: none;
 }
-.memory-game-contanir .game-block .front{
-    background-color: #333;
-    line-height: 170px;
+.memory-game-contanir .game-block .front {
+  background-color: #333;
+  line-height: 170px;
 }
-.memory-game-contanir .game-block .front::before{
-    content: "?";
-    display: block;
-    color: white;
-    font-size: 140px;
-    font-weight: bold;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+.memory-game-contanir .game-block .front::before {
+  content: "?";
+  display: block;
+  color: white;
+  font-size: 140px;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
-.memory-game-contanir .game-block .back{
-    background-color: #607d8b;
-    transform: rotateY(180deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.memory-game-contanir .game-block .back {
+  background-color: #607d8b;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.memory-game-contanir .game-block .face{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 5px solid #2196f3;
+.memory-game-contanir .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 5px solid #2196f3;
 }
 .memory-game-contanir .game-block.is-flipped,
-.memory-game-contanir .game-block.match{
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    pointer-events: none;
+.memory-game-contanir .game-block.match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
 }
-.finsh{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #cc0404c9;
-    z-index: 2;
+.finsh {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cc0404c9;
+  z-index: 2;
 }
-.finsh span{
-    position: absolute;
-    left: 50%;
-    top : 50%;
-    transform: translate(-50% , -50%);
-    padding: 10px 25px;
-    border-radius:6px;
-    font-size: 100px;
-    color: black;
-    font-weight: bold;
+.finsh span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: 100px;
+  color: black;
+  font-weight: bold;
 }
-.finsh .start-again{
-    position: absolute;
-    left: 50%;
-    top : 50%;
-    transform: translate(-50% , 120%);
-    background-color: black;
-    padding: 10px 25px;
-    border-radius:6px;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
+.finsh .start-again {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 120%);
+  background-color: black;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
 }
-.win{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0489ccc9;
-    z-index: 2;
+.win {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0489ccc9;
+  z-index: 2;
 }
-.win span{
-    position: absolute;
-    left: 50%;
-    top : 50%;
-    transform: translate(-50% , -50%);
-    padding: 10px 25px;
-    font-size: 100px;
-    color: #033e18;
-    font-weight: bold;
+.win span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 25px;
+  font-size: 100px;
+  color: #033e18;
+  font-weight: bold;
 }
-.win .start-again{
-    position: absolute;
-    left: 50%;
-    top : 50%;
-    transform: translate(-50% , 120%);
-    background-color: #033e18;
-    padding: 10px 25px;
-    border-radius:6px;
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
+.win .start-again {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 120%);
+  background-color: #033e18;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
 }
-video{
-    max-width: 100%;
-    height: 100vh;
-    position: absolute;
+video {
+  max-width: 100%;
+  height: 100vh;
+  position: absolute;
 }
